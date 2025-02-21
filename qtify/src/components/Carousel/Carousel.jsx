@@ -4,29 +4,28 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./Carousel.module.css";
+//import SongCard from "../SongsSection/SongCard";
+import AlbumCard from "../card/AlbumCard";
 import NavigationButtons from "../NavigationButton/NavigationButtons"; // Import buttons
 
 function Carousel({ items, renderItem }) {
   return (
     <div className={`${styles.carousel} custom-swiper`}> {/* Add custom class */}
+      {/* Songs Carousel */}
       <Swiper
-        modules={[Navigation]}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
-        spaceBetween={20}
-        slidesPerView={"auto"}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 6 },
-        }}
-      >
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>{renderItem(item)}</SwiperSlide>
-        ))}
-      </Swiper>
+  spaceBetween={20}
+  slidesPerView={"auto"}
+  navigation={true}
+  modules={[Navigation]}
+  className="custom-swiper"
+  style={{ position: "relative" }} // Ensures positioning works
+>
+  {items.map((song) => (
+    <SwiperSlide key={items.id} style={{ width: "180px" }}>
+      <AlbumCard song={song} />
+    </SwiperSlide>
+  ))}
+</Swiper>
 
       {/* Add the navigation buttons */}
       <NavigationButtons />

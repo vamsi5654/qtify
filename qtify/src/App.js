@@ -1,11 +1,7 @@
-//import logo from './logo.svg';
 import './App.css';
-//import AlbumCard from './components/card/AlbumCard';
-//import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-//import Albums from './components/Albums/Albums';
 import Section from './components/Section/Section';
 import SongsSection from './components/SongsSection/SongsSection';
 

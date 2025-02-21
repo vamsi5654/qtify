@@ -6,7 +6,7 @@ import styles from "./Section.module.css";
 
 function Section({ title, apiEndpoint }) {
   const [albums, setAlbums] = useState([]);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true); // ✅ Start with collapsed state
 
   useEffect(() => {
     axios.get(apiEndpoint)
@@ -26,7 +26,18 @@ function Section({ title, apiEndpoint }) {
         </button>
       </div>
 
-      {isCollapsed ? (
+      {!isCollapsed ? ( // ✅ Show grid when expanded
+        <div className={styles.grid}>
+          {albums.map(album => (
+            <AlbumCard 
+              key={album.id}
+              albumImage={album.image}
+              albumName={album.title}
+              follows={album.follows}
+            />
+          ))}
+        </div>
+      ) : ( // ✅ Show carousel when collapsed
         <Carousel 
           items={albums} 
           renderItem={(album) => (
@@ -38,17 +49,6 @@ function Section({ title, apiEndpoint }) {
             />
           )}
         />
-      ) : (
-        <div className={styles.grid}>
-          {albums.map(album => (
-            <AlbumCard 
-              key={album.id}
-              albumImage={album.image}
-              albumName={album.title}
-              follows={album.follows}
-            />
-          ))}
-        </div>
       )}
     </div>
   );
