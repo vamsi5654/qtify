@@ -1,0 +1,48 @@
+/* Custom Swiper Navigation */
+.custom-button {
+    color: white;
+    background: limegreen;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 45%; /* Center the buttons vertically */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0; /* Hide by default */
+    visibility: hidden; /* Ensure they are not clickable when hidden */
+  }
+  
+  /* Show buttons when Swiper is hovered */
+  .custom-swiper:hover .swiper-button-next,
+  .custom-swiper:hover .swiper-button-prev {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Hide buttons when they are not required */
+  .swiper-button-disabled {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none; /* Prevent clicking */
+  }
+  
+  /* Adjust position to keep buttons inside */
+  .swiper-button-prev {
+    left: 0px;
+  }
+  
+  .swiper-button-next {
+    right: 0px;
+  }
+  
+  /* Make arrow icons inside the buttons bigger */
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

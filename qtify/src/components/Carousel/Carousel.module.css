@@ -1,0 +1,16 @@
+.carousel {
+    position: relative;
+    padding: 20px 0;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #00ff00; /* Use your theme color */
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
