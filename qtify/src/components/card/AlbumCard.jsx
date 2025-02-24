@@ -1,6 +1,4 @@
 import React from "react";
-//import styles from "./AlbumCard.module.css";
-//import { Chip } from "@mui/material";
 import { Card, CardMedia, CardContent, Typography, Box } from "@mui/material";
 
 function AlbumCard({ song }) {

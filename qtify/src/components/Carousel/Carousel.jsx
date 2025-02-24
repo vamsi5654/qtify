@@ -4,7 +4,6 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import styles from "./Carousel.module.css";
-//import SongCard from "../SongsSection/SongCard";
 import AlbumCard from "../card/AlbumCard";
 import NavigationButtons from "../NavigationButton/NavigationButtons"; // Import buttons
 
